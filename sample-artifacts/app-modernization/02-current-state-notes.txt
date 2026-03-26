@@ -1,0 +1,5 @@
+Current state
+- monolithic IIS-hosted .NET app
+- app config in files
+- no structured monitoring
+- manual deployment

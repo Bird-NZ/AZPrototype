@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo scripts and examples · AZPrototype</title>
+  <meta name="description" content="Ready-to-run command sequences for workshops, demos, internal onboarding, and scenario-based teaching.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link active">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>Demo scripts and examples</h1>
+        <p class="lede">Ready-to-run command sequences for workshops, demos, internal onboarding, and scenario-based teaching.</p>
+        
+      </header>
+      
+<section class="panel"><h2>Example 1 — Web app starter</h2><pre><code>mkdir web-demo && cd web-demo
+az prototype init --name web-demo --location eastus --template web-app
+az prototype design --context "Customer portal with secure API and SQL backend"
+az prototype build
+az prototype deploy --dry-run</code></pre></section>
+<section class="panel"><h2>Example 2 — AI app walkthrough</h2><pre><code>mkdir ai-demo && cd ai-demo
+az prototype init --name ai-demo --location australiaeast --template ai-app --ai-provider azure-openai
+az prototype design --context "Internal copilot with retrieval, conversation history, and approval workflow"
+az prototype build --scope infra
+az prototype build --scope apps
+az prototype deploy --dry-run</code></pre></section>
+<section class="panel"><h2>Example 3 — Use a real sample artifacts folder</h2><p>This site includes a mixed-format sample requirements pack you can use in workshops and demos.</p><pre><code>mkdir retail-demo && cd retail-demo
+az prototype init --name retail-demo --location australiaeast --template ai-app --ai-provider github-models
+mkdir -p requirements
+cp ../sample-artifacts/* ./requirements/
+az prototype design --artifacts ./requirements --context "Design a pragmatic retail insights assistant on Azure"
+az prototype build
+az prototype deploy --dry-run</code></pre><ul><li><a href="sample-artifacts/01-executive-brief.md">Executive brief</a></li><li><a href="sample-artifacts/02-discovery-notes.txt">Discovery notes</a></li><li><a href="sample-artifacts/03-architecture-slides-outline.md">Slide outline</a></li><li><a href="sample-artifacts/04-sample-issues.csv">Issue list</a></li><li><a href="sample-artifacts/05-nonfunctional-requirements.json">Non-functional requirements</a></li><li><a href="sample-artifacts/06-customer-brief.pdf">PDF brief</a></li><li><a href="sample-artifacts/07-dashboard-screenshot.svg">Screenshot mock</a></li></ul></section>
+<section class="panel"><h2>Example 4 — Scenario pack teaching flow</h2><pre><code>mkdir modernization-demo && cd modernization-demo
+az prototype init --name modernization-demo --location australiaeast --template web-app --ai-provider github-models
+mkdir -p requirements
+cp ../sample-artifacts/app-modernization/* ./requirements/
+az prototype design --artifacts ./requirements --context "Design a pragmatic Azure modernization prototype with clear next-step roadmap"
+az prototype build
+az prototype deploy --dry-run</code></pre><p>Swap <code>app-modernization</code> for <code>ai-app</code>, <code>data-platform</code>, or <code>internal-copilot</code> depending on your audience.</p></section>
+<section class="panel"><h2>Example 5 — Configuration edits during a demo</h2><pre><code>az prototype config show
+az prototype config set --key naming.strategy --value microsoft-caf
+az prototype config set --key ai.model --value gpt-4o
+az prototype agent list</code></pre></section>
+<section class="panel accent"><h2>Good demo hygiene</h2><ul><li>Use dry-run in live demos unless you truly need a real deploy.</li><li>Have a pre-authenticated environment.</li><li>Keep one or two prepared requirements folders for repeatability.</li><li>Use the included sample artifact pack when teaching <code>--artifacts</code> so people can see real input files, not placeholders.</li><li>Narrate the roles of the agents so the audience sees the system design, not just terminal output.</li></ul></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

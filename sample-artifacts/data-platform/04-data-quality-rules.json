@@ -1,0 +1,7 @@
+{
+  "rules": [
+    "reject malformed store IDs",
+    "flag future-dated transactions",
+    "track late-arriving files"
+  ]
+}

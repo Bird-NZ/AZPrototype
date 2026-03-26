@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Troubleshooting · AZPrototype</title>
+  <meta name="description" content="Common failure modes across install, auth, design, build, and deployment.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link active">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>Troubleshooting</h1>
+        <p class="lede">Common failure modes across install, auth, design, build, and deployment.</p>
+        
+      </header>
+      
+<section class="panel"><h2>Install and auth issues</h2><ul><li><strong><code>az prototype --help</code> fails:</strong> verify the extension installed correctly and Azure CLI is new enough.</li><li><strong>GitHub auth errors:</strong> run <code>gh auth status</code>. If you chose <code>azure-openai</code>, you can avoid the GitHub auth path.</li><li><strong>Copilot license failures:</strong> use a licensed GitHub account or switch providers for the session.</li></ul></section>
+<section class="panel"><h2>Stage guard failures</h2><ul><li><strong>No <code>prototype.yaml</code> found:</strong> run <code>az prototype init</code> first.</li><li><strong>Build has weak outputs:</strong> rerun <code>design</code> with better artifacts or a tighter context statement.</li><li><strong>Deploy cannot proceed:</strong> run <code>az prototype deploy --dry-run</code> and <code>/preflight</code> to see whether the blocker is infra tooling, subscription state, or missing generated outputs.</li></ul></section>
+<section class="panel"><h2>When generated architecture looks wrong</h2><ol><li>Do not hand-patch everything immediately.</li><li>Go back to <code>design</code> and improve the requirement signal.</li><li>Use template selection and custom agents deliberately.</li><li>Rebuild after the design is corrected.</li></ol></section>
+<section class="panel"><h2>Troubleshooting mindset</h2><p>The shortest path is usually: verify prerequisites → verify config → dry-run → inspect stage plan → rerun the prior re-entrant stage instead of patching downstream symptoms.</p></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artifacts · AZPrototype</title>
+  <meta name="description" content="Learn what to put in a requirements folder for az prototype design --artifacts, with real sample files and multiple scenario packs.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">AZ</span><span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span></a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link active">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note"><p><strong>Workflow</strong></p><p><code>init → design → build → deploy</code></p></div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <span class="kicker">Teaching with real inputs</span>
+        <h1>Artifacts for <code>design --artifacts</code></h1>
+        <p class="lede">A practical guide to what goes in a requirements folder, why it helps, and reusable scenario packs for workshops, customer demos, and onboarding.</p>
+        <div class="hero-actions"><a class="btn primary" href="sample-artifacts/README.md">Open base sample pack</a><a class="btn ghost" href="examples.html">See example flows</a></div>
+      </header>
+
+<section class="stat-grid">
+  <div class="stat"><strong>5</strong><span>scenario packs</span></div>
+  <div class="stat"><strong>25+</strong><span>sample files</span></div>
+  <div class="stat"><strong>mixed</strong><span>text, csv, json, pdf, svg</span></div>
+  <div class="stat"><strong>1 command</strong><span>to reuse any pack in a demo</span></div>
+</section>
+
+<section class="callout"><strong>Use this when teaching:</strong> Most teams do not start with a perfect spec. They start with a brief, messy notes, screenshots, spreadsheets, and a handful of constraints. That is exactly what <code>--artifacts</code> is for.</section>
+
+<section class="panel"><h2>Base mixed-format sample pack</h2><p>Start here if you want a general-purpose example of what a requirements folder can contain.</p><ul class="link-list"><li><a href="sample-artifacts/01-executive-brief.md">01-executive-brief.md</a></li><li><a href="sample-artifacts/02-discovery-notes.txt">02-discovery-notes.txt</a></li><li><a href="sample-artifacts/03-architecture-slides-outline.md">03-architecture-slides-outline.md</a></li><li><a href="sample-artifacts/04-sample-issues.csv">04-sample-issues.csv</a></li><li><a href="sample-artifacts/05-nonfunctional-requirements.json">05-nonfunctional-requirements.json</a></li><li><a href="sample-artifacts/06-customer-brief.pdf">06-customer-brief.pdf</a></li><li><a href="sample-artifacts/07-dashboard-screenshot.svg">07-dashboard-screenshot.svg</a></li></ul><pre><code>mkdir -p requirements
+cp sample-artifacts/* ./requirements/
+az prototype design --artifacts ./requirements --context "Use these materials to produce a pragmatic Azure prototype design."</code></pre></section>
+
+<section class="panel accent"><h2>Scenario packs</h2><p>Use scenario packs when you want the docs site to teach a particular class of Azure prototype rather than a generic one.</p><div class="scenario-grid">
+<div class="scenario-card"><h3>AI app</h3><div class="scenario-meta"><span class="badge">assistant</span><span class="badge">retrieval</span><span class="badge">approval flow</span></div><p>Internal copilot with retrieval, conversation history, and secure access patterns.</p><ul class="link-list"><li><a href="sample-artifacts/ai-app/README.md">Pack README</a></li><li><a href="sample-artifacts/ai-app/01-solution-brief.md">Solution brief</a></li><li><a href="sample-artifacts/ai-app/05-ui-screenshot.svg">UI screenshot</a></li></ul><pre><code>cp sample-artifacts/ai-app/* ./requirements/</code></pre></div>
+<div class="scenario-card"><h3>Data platform</h3><div class="scenario-meta"><span class="badge">ingestion</span><span class="badge">analytics</span><span class="badge">KPIs</span></div><p>Retail analytics/data platform with source systems, KPI definitions, and data-quality expectations.</p><ul class="link-list"><li><a href="sample-artifacts/data-platform/README.md">Pack README</a></li><li><a href="sample-artifacts/data-platform/01-executive-brief.md">Executive brief</a></li><li><a href="sample-artifacts/data-platform/05-dashboard-mock.svg">Dashboard mock</a></li></ul><pre><code>cp sample-artifacts/data-platform/* ./requirements/</code></pre></div>
+<div class="scenario-card"><h3>Internal copilot</h3><div class="scenario-meta"><span class="badge">knowledge</span><span class="badge">routing</span><span class="badge">safe actions</span></div><p>Cross-team internal copilot for policy, process lookup, and request routing.</p><ul class="link-list"><li><a href="sample-artifacts/internal-copilot/README.md">Pack README</a></li><li><a href="sample-artifacts/internal-copilot/01-charter.md">Charter</a></li><li><a href="sample-artifacts/internal-copilot/05-chat-mock.svg">Chat mock</a></li></ul><pre><code>cp sample-artifacts/internal-copilot/* ./requirements/</code></pre></div>
+<div class="scenario-card"><h3>App modernization</h3><div class="scenario-meta"><span class="badge">legacy app</span><span class="badge">migration</span><span class="badge">modernization</span></div><p>Legacy line-of-business app moving toward a more Azure-native deployment model.</p><ul class="link-list"><li><a href="sample-artifacts/app-modernization/README.md">Pack README</a></li><li><a href="sample-artifacts/app-modernization/01-modernization-brief.md">Modernization brief</a></li><li><a href="sample-artifacts/app-modernization/05-architecture-comparison.svg">Architecture comparison</a></li></ul><pre><code>cp sample-artifacts/app-modernization/* ./requirements/</code></pre></div>
+</div></section>
+
+<section class="grid cols-2"><article class="panel"><h2>How to teach this well</h2><ol class="steps"><li><strong>Show the files first.</strong> Let people see the folder and file types.</li><li><strong>Explain the point.</strong> Real projects start from mixed artifacts, not one pristine prompt.</li><li><strong>Run the command.</strong> Use <code>design --artifacts</code> with a tight context sentence.</li><li><strong>Narrate what the system is doing.</strong> Biz analyst closes gaps; architect turns context into design.</li></ol></article><article class="panel"><h2>What to avoid</h2><ul><li>Too many duplicate files</li><li>Noisy exports without signal</li><li>Artifacts with no clear problem statement</li><li>Skipping the context sentence entirely</li></ul></article></section>
+
+<section class="panel"><h2>Visual sample</h2><div class="hero-split"><div><p>The site now includes lightweight visual mocks in SVG form so the packs feel more like real project inputs and less like placeholder text.</p><p>These are intentionally simple, browser-friendly artifacts that render cleanly on GitHub Pages.</p></div><div><img class="visual" src="sample-artifacts/07-dashboard-screenshot.svg" alt="Sample dashboard mock"></div></div></section>
+
+<section class="panel"><h2>Next steps</h2><div class="grid cols-2 compact"><a class="topic" href="quickstart.html"><strong>Quickstart</strong><span>Use the base sample pack in a first run</span></a><a class="topic" href="walkthrough.html"><strong>Walkthrough</strong><span>See where artifacts fit in the stage model</span></a><a class="topic" href="examples.html"><strong>Examples</strong><span>Copy a demo sequence that uses scenario packs</span></a><a class="topic" href="troubleshooting.html"><strong>Troubleshooting</strong><span>Fix weak design outputs by improving artifacts</span></a></div></section>
+
+      <footer class="footer"><p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p></footer>
+    </main>
+  </div>
+</body>
+</html>

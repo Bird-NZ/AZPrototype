@@ -1,0 +1,5 @@
+item,priority
+containerize_app,high
+externalize_secrets,high
+add_app_insights,high
+introduce_ci_cd,medium

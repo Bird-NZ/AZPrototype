@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quickstart · AZPrototype</title>
+  <meta name="description" content="Copy-paste path from zero to a first generated Azure prototype project.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link active">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>Quickstart</h1>
+        <p class="lede">Copy-paste path from zero to a first generated Azure prototype project.</p>
+        
+      </header>
+      
+<section class="panel"><h2>1. Create a project</h2><pre><code>mkdir my-prototype && cd my-prototype
+az prototype init --name my-prototype --location eastus --template web-app</code></pre><p>This creates <code>prototype.yaml</code> and project scaffolding.</p></section>
+<section class="panel"><h2>2. Generate the design</h2><pre><code>az prototype design --context "Build a customer-facing web app with API, SQL, Key Vault, and APIM"</code></pre><p>Use <code>--artifacts ./requirements</code> when you already have PDFs, docs, slides, screenshots, or notes.</p><p>Need examples? This docs site includes a realistic sample pack in <code>sample-artifacts/</code>.</p><pre><code>mkdir -p requirements
+cp sample-artifacts/* ./requirements/
+az prototype design --artifacts ./requirements --context "Use these materials to produce a pragmatic Azure prototype design."</code></pre><ul><li><a href="sample-artifacts/01-executive-brief.md">01-executive-brief.md</a></li><li><a href="sample-artifacts/02-discovery-notes.txt">02-discovery-notes.txt</a></li><li><a href="sample-artifacts/03-architecture-slides-outline.md">03-architecture-slides-outline.md</a></li><li><a href="sample-artifacts/04-sample-issues.csv">04-sample-issues.csv</a></li><li><a href="sample-artifacts/05-nonfunctional-requirements.json">05-nonfunctional-requirements.json</a></li><li><a href="sample-artifacts/06-customer-brief.pdf">06-customer-brief.pdf</a></li><li><a href="sample-artifacts/07-dashboard-screenshot.svg">07-dashboard-screenshot.svg</a></li></ul></section>
+<section class="panel"><h2>3. Build artifacts</h2><pre><code>az prototype build
+# or focus the build
+az prototype build --scope infra
+az prototype build --scope apps</code></pre></section>
+<section class="panel"><h2>4. Dry-run deployment before touching Azure</h2><pre><code>az prototype deploy --dry-run</code></pre><p>For Terraform this surfaces a plan. For Bicep it uses What-If.</p></section>
+<section class="panel"><h2>5. Deploy for real</h2><pre><code>az prototype deploy</code></pre></section>
+<section class="panel accent"><h2>What success looks like</h2><ul><li><code>prototype.yaml</code> exists</li><li>Design outputs describe the target architecture</li><li>Build creates staged infrastructure/app/doc outputs</li><li>Dry-run shows expected Azure changes</li><li>Deploy completes stage-by-stage without ad-hoc glue scripts</li></ul></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

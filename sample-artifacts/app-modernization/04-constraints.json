@@ -1,0 +1,3 @@
+{
+  "constraints": ["keep first release low risk", "minimize downtime", "keep architecture explainable to stakeholders"]
+}

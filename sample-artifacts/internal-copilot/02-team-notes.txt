@@ -1,0 +1,5 @@
+Team notes
+- HR wants policy Q&A
+- IT wants ticket deflection
+- Finance wants process lookup
+- Keep scope to read-heavy workflows first

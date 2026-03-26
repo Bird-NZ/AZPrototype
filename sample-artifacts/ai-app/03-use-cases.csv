@@ -1,0 +1,5 @@
+id,use_case,priority
+1,Answer policy questions,high
+2,Find process documentation,high
+3,Escalate approval requests,medium
+4,Summarize prior conversations,medium

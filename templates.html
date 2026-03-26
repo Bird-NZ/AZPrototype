@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Templates · AZPrototype</title>
+  <meta name="description" content="Workload templates are optional accelerators for common Azure prototype patterns.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link active">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>Templates</h1>
+        <p class="lede">Workload templates are optional accelerators for common Azure prototype patterns.</p>
+        
+      </header>
+      
+<section class="panel"><h2>Available templates</h2><table><tr><th>Template</th><th>Description</th><th>Typical services</th></tr><tr><td><code>web-app</code></td><td>Containerised web app with SQL backend and APIM gateway</td><td>Container Apps, SQL, Key Vault, APIM</td></tr><tr><td><code>data-pipeline</code></td><td>Event-driven data pipeline</td><td>Functions, Cosmos DB, Storage, Event Grid</td></tr><tr><td><code>ai-app</code></td><td>AI-powered application starter</td><td>Container Apps, Azure OpenAI, Cosmos DB, APIM</td></tr><tr><td><code>microservices</code></td><td>Multi-service architecture</td><td>Container Apps, Service Bus, APIM</td></tr><tr><td><code>serverless-api</code></td><td>Serverless REST API</td><td>Functions, SQL, Key Vault, APIM</td></tr></table></section>
+<section class="grid cols-2"><article class="panel"><h2>Use a template at init time</h2><pre><code>az prototype init --name api-demo --location eastus --template serverless-api</code></pre></article><article class="panel"><h2>What templates do</h2><ul><li>Seed likely service topology</li><li>Influence build-stage deployment planning</li><li>Carry configuration defaults and requirements</li><li>Still allow later design refinements</li></ul></article></section>
+<section class="panel"><h2>When not to lean too hard on templates</h2><p>If your workload is unusual, regulated, or has sharp architectural constraints, treat templates as hints. Let the design stage and custom agents reshape the result.</p></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

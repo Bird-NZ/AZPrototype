@@ -1,0 +1,4 @@
+metric,definition
+sales_vs_forecast,Daily sales performance against forecast
+out_of_stock_rate,Percentage of SKUs unavailable
+store_incident_count,Open operational issues by store

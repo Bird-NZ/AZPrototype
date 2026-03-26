@@ -1,0 +1,6 @@
+Discovery notes
+- Need retrieval over internal knowledge
+- Users: support agent, ops lead, admin
+- Conversation history matters
+- Auditability matters for approvals
+- Start with internal users only

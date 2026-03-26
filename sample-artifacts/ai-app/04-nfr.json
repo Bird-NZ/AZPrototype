@@ -1,0 +1,5 @@
+{
+  "security": ["internal authenticated users", "managed identity preferred"],
+  "operations": ["application insights", "basic dashboards"],
+  "cost": ["prototype budget minded"]
+}

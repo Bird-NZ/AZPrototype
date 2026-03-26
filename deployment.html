@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deployment, dry-run, and rollout control · AZPrototype</title>
+  <meta name="description" content="How to validate and deploy safely with staged execution, plan previews, and rollback awareness.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link active">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>Deployment, dry-run, and rollout control</h1>
+        <p class="lede">How to validate and deploy safely with staged execution, plan previews, and rollback awareness.</p>
+        
+      </header>
+      
+<section class="grid cols-2"><article class="panel"><h2>Dry-run first</h2><pre><code>az prototype deploy --dry-run</code></pre><p>That uses Terraform plan or Azure deployment What-If depending on the generated infrastructure path.</p></article><article class="panel"><h2>Deploy for real</h2><pre><code>az prototype deploy
+az prototype deploy --stage 2</code></pre><p>Stage targeting is useful when iterating on a single part of the generated system.</p></article></section>
+<section class="panel"><h2>Interactive deploy session commands</h2><pre><code>/status
+/plan N
+/deploy N
+/rollback N
+/redeploy N
+/outputs
+/preflight</code></pre><p>These session commands matter in demos and live troubleshooting because they keep the operator inside one guided flow.</p></section>
+<section class="panel"><h2>What happens before deployment</h2><ul><li>Subscription and project checks</li><li>Resource provider validation</li><li>Resource group or deployment context setup</li><li>Plan preview for infra stages</li><li>Output capture for downstream stages</li></ul></section>
+<section class="panel"><h2>Deployment habits worth enforcing</h2><ol><li>Run dry-run before every customer-facing or shared-environment deployment.</li><li>Inspect names, SKUs, and security-sensitive defaults before approval.</li><li>Prefer incremental iteration by stage over giant all-at-once retries.</li><li>Keep evidence: plan output, deployment output, and resulting URLs.</li></ol></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

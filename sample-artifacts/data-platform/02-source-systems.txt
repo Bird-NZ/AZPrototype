@@ -1,0 +1,5 @@
+Source systems
+- POS batch exports
+- inventory snapshots
+- support ticket export
+- optional CRM feed later

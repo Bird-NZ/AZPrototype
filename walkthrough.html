@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Init → Design → Build → Deploy walkthrough · AZPrototype</title>
+  <meta name="description" content="A full tutorial that explains the mental model of each stage, not just the commands.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link active">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>Init → Design → Build → Deploy walkthrough</h1>
+        <p class="lede">A full tutorial that explains the mental model of each stage, not just the commands.</p>
+        
+      </header>
+      
+<section class="panel"><h2>Stage 1 — Init</h2><p><strong>Goal:</strong> establish project identity, configuration, AI provider, environment, and optional workload template.</p><pre><code>az prototype init   --name retail-demo   --location australiaeast   --iac-tool terraform   --ai-provider azure-openai   --environment dev   --template ai-app</code></pre><p>Use templates as accelerators, not cages. They provide a sensible starting service topology.</p></section>
+<section class="panel"><h2>Stage 2 — Design</h2><p><strong>Goal:</strong> turn requirements into an architecture and clarify gaps.</p><pre><code>az prototype design --artifacts ./requirements --context "Customer support copilot with conversation history and secure APIs"</code></pre><ul><li>The business analyst looks for missing requirements.</li><li>The cloud architect turns requirements into an architecture plan.</li><li>You can rerun design to refine decisions instead of starting over.</li></ul><p>For demos and training, use the included <a href="sample-artifacts/README.md">sample artifact pack</a> to show what <code>--artifacts</code> really means in practice.</p><pre><code>mkdir -p requirements
+cp sample-artifacts/* ./requirements/
+az prototype design --artifacts ./requirements --context "Use these mixed-format inputs to create a pragmatic Azure prototype design."</code></pre><p>That sample pack includes a brief, discovery notes, slide outline, CSV issue list, JSON non-functional requirements, a PDF brief, and a screenshot mock.</p></section>
+<section class="panel"><h2>Stage 3 — Build</h2><p><strong>Goal:</strong> derive a staged deployment plan and generate the implementation assets.</p><pre><code>az prototype build</code></pre><p>Build is where the system selects matching templates, derives a deployment plan, assigns specialized agents, and generates staged outputs for infra, docs, and apps.</p><ul><li>Fine-grained stages keep dependencies explicit.</li><li>Governance policies and anti-pattern checks are applied during generation.</li><li>QA review can route issues back to generators before you proceed.</li></ul></section>
+<section class="panel"><h2>Stage 4 — Deploy</h2><p><strong>Goal:</strong> validate and roll out the generated stages into Azure.</p><pre><code>az prototype deploy --dry-run
+az prototype deploy</code></pre><p>Deploy supports staged rollout, preflight checks, outputs capture, slash-command controls in interactive sessions, and rollback flows.</p></section>
+<section class="grid cols-2"><article class="panel"><h2>Re-entrant stages</h2><p><code>design</code>, <code>build</code>, and <code>deploy</code> are designed to be revisited. That matters in real work: requirements change, QA finds issues, or a customer asks to add Redis halfway through.</p></article><article class="panel"><h2>Operator habit to keep</h2><p>Before every meaningful deploy, run a dry-run, inspect the stage plan, and confirm the chosen naming strategy and environment are still correct.</p></article></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

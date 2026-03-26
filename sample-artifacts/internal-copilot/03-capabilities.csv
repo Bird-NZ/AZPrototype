@@ -1,0 +1,5 @@
+capability,phase
+knowledge_qna,1
+request_routing,1
+approval_workflows,2
+transaction_execution,3

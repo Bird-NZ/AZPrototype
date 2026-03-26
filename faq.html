@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ · AZPrototype</title>
+  <meta name="description" content="Frequent questions about operating and explaining AZ Prototype.">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AZ</span>
+        <span><strong>AZPrototype</strong><small>GitHub Pages docs site</small></span>
+      </a>
+      <nav class="nav"><a href="index.html" class="nav-link">Overview</a><a href="getting-started.html" class="nav-link">Getting started</a><a href="quickstart.html" class="nav-link">Quickstart</a><a href="walkthrough.html" class="nav-link">Walkthrough</a><a href="artifacts.html" class="nav-link">Artifacts</a><a href="agents.html" class="nav-link">Agents</a><a href="templates.html" class="nav-link">Templates</a><a href="configuration.html" class="nav-link">Configuration</a><a href="deployment.html" class="nav-link">Deployment</a><a href="troubleshooting.html" class="nav-link">Troubleshooting</a><a href="examples.html" class="nav-link">Examples</a><a href="faq.html" class="nav-link active">FAQ</a></nav>
+      <div class="sidebar-note">
+        <p><strong>Workflow</strong></p>
+        <p><code>init → design → build → deploy</code></p>
+      </div>
+    </aside>
+    <main class="content">
+      <header class="hero">
+        <p class="eyebrow">AZ Prototype Docs</p>
+        <h1>FAQ</h1>
+        <p class="lede">Frequent questions about operating and explaining AZ Prototype.</p>
+        
+      </header>
+      
+<section class="panel"><h2>Is this a site generator project?</h2><p>No. This scaffold is intentionally plain static HTML/CSS/JS so it can deploy cleanly to GitHub Project Pages with minimal moving parts.</p></section>
+<section class="panel"><h2>Can I use this with GitHub Pages under a project subpath?</h2><p>Yes. The site uses relative asset and page links, so it works at <code>https://&lt;user&gt;.github.io/AZPrototype/</code>.</p></section>
+<section class="panel"><h2>Do I need GitHub auth?</h2><p>Only if you are using the <code>copilot</code> or <code>github-models</code> provider path. <code>azure-openai</code> skips the GitHub auth flow.</p></section>
+<section class="panel"><h2>When should I use templates?</h2><p>Use them to accelerate common workloads. Ignore them when your architecture is unusual enough that the template would just become cleanup debt.</p></section>
+<section class="panel"><h2>What is the safest operator flow?</h2><p><code>init</code> → <code>design</code> → <code>build</code> → <code>deploy --dry-run</code> → inspect → <code>deploy</code>.</p></section>
+<section class="panel"><h2>How do I preview locally?</h2><pre><code>python3 -m http.server 4173 -d az-prototype/site</code></pre></section>
+
+      <footer class="footer">
+        <p>Built as a static, GitHub Project Pages-ready site for the <code>az prototype</code> extension.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
